@@ -53,6 +53,7 @@ def search_vtable(segname):
 					if name.find('::') != -1 and name.find('(') != -1:
 						cnt += 1
 						name = name.replace('~', 'Destruct')
+                        name = name[:name.find('(')]
 						funcname = filter(str.isalnum, name)
 						vtbl.append(funcname)
 					elif name.find('pure_virtual') != -1:
